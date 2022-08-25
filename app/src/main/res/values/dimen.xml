@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="highTextSize">16sp</dimen>
+    <dimen name="lowTextSize">14sp</dimen>
+    <dimen name="verticalMargin">15dp</dimen>
+    <dimen name="horizontalMargin">5dp</dimen>
+</resources>
