@@ -39,6 +39,7 @@
         android:textSize="@dimen/lowTextSize"
         app:layout_constraintStart_toStartOf="@id/userNameTextView"
         app:layout_constraintTop_toBottomOf="@id/userNameTextView"
+        app:layout_constraintEnd_toStartOf="@+id/deleteButtonView"
         tools:text="Google Inc." />
 
 

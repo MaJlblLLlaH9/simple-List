@@ -3,5 +3,6 @@
     <dimen name="highTextSize">16sp</dimen>
     <dimen name="lowTextSize">14sp</dimen>
     <dimen name="verticalMargin">15dp</dimen>
-    <dimen name="horizontalMargin">5dp</dimen>
+    <dimen name="horizontalMargin">20dp</dimen>
+    <dimen name="bottomMargine">40dp</dimen>
 </resources>
