@@ -25,8 +25,8 @@ class UserListActivity : AppCompatActivity() {
         val view = layoutInflater.inflate(R.layout.adding_user, null)
         builder.setView(view)
 
-        val name = view.findViewById<TextView>(R.id.userNameTextView)
-        val about = view.findViewById<TextView>(R.id.userAboutTextView)
+        val name = view.findViewById<TextView>(R.id.EnterNameEditTextView)
+        val about = view.findViewById<TextView>(R.id.EnterAboutEditTextView)
         val saveButton = view.findViewById<Button>(R.id.AddButtonView)
         val alertDialog = builder.create()
 
