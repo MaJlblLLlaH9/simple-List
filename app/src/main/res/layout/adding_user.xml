@@ -32,12 +32,4 @@
         app:layout_constraintTop_toBottomOf="@id/EnterAboutEditTextView"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <Button
-        android:id="@+id/ToListButtonView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/horizontalMargin"
-        android:text="To list"
-        app:layout_constraintEnd_toEndOf="@id/EnterNameEditTextView"
-        app:layout_constraintTop_toBottomOf="@id/EnterAboutEditTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
