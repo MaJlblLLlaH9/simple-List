@@ -11,12 +11,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        setupAdapter(binding)
     }
-
-//    private fun setupAdapter(binding: ActivityMainBinding) {
-//        val categoryList = listOf("Family", "Friend", "School", "Work", "Church")
-//        val adapter = (categoryList)
-//        binding.categoryRecyclerView.adapter = adapter
-//    }
 }

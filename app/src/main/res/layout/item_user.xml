@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/itemPadding"
+    >
 
     <ImageView
         android:id="@+id/photoImageView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,10 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ellipsize="end"
+        android:fontFamily="Times New Roman"
         android:lines="1"
         android:textColor="@color/black"
         android:textSize="@dimen/highTextSize"
-        app:layout_constraintEnd_toStartOf="@id/deleteButtonView"
         app:layout_constraintStart_toEndOf="@id/photoImageView"
         app:layout_constraintTop_toTopOf="@id/photoImageView"
         tools:text="John Smith" />
@@ -37,23 +39,11 @@
         android:ellipsize="end"
         android:lines="1"
         android:textSize="@dimen/lowTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/userNameTextView"
         app:layout_constraintTop_toBottomOf="@id/userNameTextView"
-        app:layout_constraintEnd_toStartOf="@+id/deleteButtonView"
         tools:text="Google Inc." />
 
-
-    <ImageView
-        android:id="@+id/deleteButtonView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="12dp"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:padding="6dp"
-        android:src="@drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
