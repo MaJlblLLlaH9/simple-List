@@ -2,8 +2,8 @@
 <resources>
     <dimen name="highTextSize">22sp</dimen>
     <dimen name="lowTextSize">18sp</dimen>
-    <dimen name="verticalMargin">15dp</dimen>
-    <dimen name="itemPadding">30dp</dimen>
-    <dimen name="horizontalMargin">20dp</dimen>
-    <dimen name="bottomMargin">40dp</dimen>
+    <dimen name="itemPadding">15dp</dimen>
+    <dimen name="imageSize">80dp</dimen>
+    <dimen name="marginStart"></dimen>
+    <dimen name="marginTop">4dp</dimen>
 </resources>

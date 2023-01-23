@@ -32,7 +32,7 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
         fun bindItem(user: User) {
             binding.userNameTextView.text = user.name
             binding.userAboutTextView.text = user.about
-            binding.photoImageView.setImageResource(R.drawable.ic_user_avatar);
+            binding.photoImageView.setImageResource(user.photo);
         }
     }
 }
