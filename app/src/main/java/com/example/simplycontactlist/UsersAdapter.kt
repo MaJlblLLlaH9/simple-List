@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simplycontactlist.databinding.ItemUserBinding
+import com.example.simplycontactlist.module.Service
 import com.example.simplycontactlist.module.User
-import com.example.simplycontactlist.module.UsersService
 
-class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
+class UsersAdapter(service: Service) : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
 
-    private var users = UsersService().getUsers()
+    private var users = service.getUsers()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,9 +30,9 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
         private val binding: ItemUserBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bindItem(user: User) {
-            binding.userNameTextView.text = user.name
-            binding.userAboutTextView.text = user.about
-            binding.photoImageView.setImageResource(user.photo);
+            binding.userNameTextView.text = user.getUserName()
+            binding.userAboutTextView.text = user.getUserAbout()
+            binding.photoImageView.setImageResource(user.getUserPhoto());
         }
     }
 }

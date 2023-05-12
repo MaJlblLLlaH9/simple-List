@@ -1,8 +1,11 @@
-
 package com.example.simplycontactlist.module
 
-class UsersService {
-    fun getUsers(): MutableList<User> {
+class UsersService : Service {
+    override fun getUsers(): MutableList<User> {
         return UsersList().users
     }
+}
+
+interface Service {
+    fun getUsers(): MutableList<User>
 }
