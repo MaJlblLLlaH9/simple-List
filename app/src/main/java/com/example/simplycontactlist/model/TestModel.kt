@@ -1,19 +1,23 @@
 package com.example.simplycontactlist.model
 
 import android.content.Context
-import com.example.simplycontactlist.module.Model
-import com.example.simplycontactlist.module.ResultCallback
+import com.example.simplycontactlist.Model
+import com.example.simplycontactlist.ResultCallback
+import com.example.simplycontactlist.module.NoData
+import com.example.simplycontactlist.module.ServiceUnavailable
 import com.example.simplycontactlist.module.UsersService
 
 class TestModel(resourceManager: ResourceManager) : Model {
     private var callback: ResultCallback? = null
     private var count = 0
-    override fun chooseDataSource(cached: Boolean) {
+    private val noData = NoData(resourceManager)
+    private val serviceUnavailable = ServiceUnavailable(resourceManager)
 
-    }
-
-    override fun getList() {
-
+    override fun getUsers() {
+        Thread {
+            Thread.sleep(1000)
+            callback?.provideSuccess(UsersService())
+        }.start()
     }
 
     override fun init(callback: ResultCallback) {
@@ -21,9 +25,8 @@ class TestModel(resourceManager: ResourceManager) : Model {
     }
 
     override fun clear() {
-        callback = null
+        this.callback = null
     }
-
 }
 
 interface ResourceManager {

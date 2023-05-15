@@ -1,6 +1,7 @@
 package com.example.simplycontactlist.module
 
 import android.app.Application
+import com.example.simplycontactlist.ViewModel
 import com.example.simplycontactlist.model.BaseResourceManager
 import com.example.simplycontactlist.model.TestModel
 

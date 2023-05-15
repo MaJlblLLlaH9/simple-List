@@ -1,37 +1,45 @@
-package com.example.simplycontactlist.module
+package com.example.simplycontactlist
 
-import androidx.annotation.DrawableRes
+import com.example.simplycontactlist.module.Service
+import com.example.simplycontactlist.module.User
+import com.example.simplycontactlist.module.UsersFailure
+import com.example.simplycontactlist.module.UsersService
+import java.lang.Error
+
 
 class ViewModel(private val model: Model) {
 
-    private var dataCallback: DataCallback? = null
+    private var callback: TextCallback? = null
 
-    fun init(callback: DataCallback) {
-        dataCallback = callback
+    fun init(callback: TextCallback) {
+        this.callback = callback
         model.init(object : ResultCallback {
-            override fun provide(user: User) {
-                dataCallback?.let { user.map(it) }
-            }
+            override fun provideSuccess(service: Service) =
+                callback.provideUsers(service)
+
+//            override fun provideError(error: Service) =
+//                callback.provideUsers(error)
 
         })
     }
-    fun clear(){
-        dataCallback = null
+
+    fun getUsers() {
+        model.getUsers()
+    }
+
+    fun clear() {
+        callback = null
         model.clear()
     }
 }
 
-
-interface DataCallback {
-    fun provideName(name: String)
-    fun provideAbout(text: String)
-    fun providePhoto(photo: Int)
+interface TextCallback {
+    fun provideUsers(service: Service)
 }
 
 interface Model {
-    fun chooseDataSource(cached: Boolean)
 
-    fun getList()
+    fun getUsers()
 
     fun init(callback: ResultCallback)
 
@@ -39,5 +47,6 @@ interface Model {
 }
 
 interface ResultCallback {
-    fun provide(user: User)
+    fun provideSuccess(service: Service)
+//    fun provideError(service: Service)
 }

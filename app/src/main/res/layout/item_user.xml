@@ -25,7 +25,6 @@
         android:ellipsize="end"
         android:fontFamily="Times New Roman"
         android:lines="1"
-        android:textColor="@color/black"
         android:textSize="@dimen/highTextSize"
         app:layout_constraintStart_toEndOf="@id/photoImageView"
         app:layout_constraintTop_toTopOf="@id/photoImageView"

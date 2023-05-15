@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">simplyContactList</string>
+    <string name="buttonText">Get users</string>
 </resources>
