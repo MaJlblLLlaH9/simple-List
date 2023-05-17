@@ -1,24 +1,21 @@
 package com.example.simplycontactlist
 
-import com.example.simplycontactlist.module.Service
-import com.example.simplycontactlist.module.User
 import com.example.simplycontactlist.module.UsersFailure
-import com.example.simplycontactlist.module.UsersService
-import java.lang.Error
 
 
 class ViewModel(private val model: Model) {
 
-    private var callback: TextCallback? = null
+    private var callback: UserCallback? = null
 
-    fun init(callback: TextCallback) {
+    fun init(callback: UserCallback) {
         this.callback = callback
         model.init(object : ResultCallback {
-            override fun provideSuccess(service: Service) =
-                callback.provideUsers(service)
+            override fun provideSuccess(adapter: UsersAdapter) =
+                callback.provideUsers(adapter)
 
-//            override fun provideError(error: Service) =
-//                callback.provideUsers(error)
+            //todo
+//            override fun provideError(error: UsersFailure) =
+//                callback.provideUsers(error.getMessage())
 
         })
     }
@@ -33,8 +30,8 @@ class ViewModel(private val model: Model) {
     }
 }
 
-interface TextCallback {
-    fun provideUsers(service: Service)
+interface UserCallback {
+    fun provideUsers(adapter: UsersAdapter)
 }
 
 interface Model {
@@ -47,6 +44,6 @@ interface Model {
 }
 
 interface ResultCallback {
-    fun provideSuccess(service: Service)
-//    fun provideError(service: Service)
+    fun provideSuccess(adapter: UsersAdapter)
+//    fun provideError(error: UsersFailure)
 }

@@ -4,6 +4,6 @@
     <dimen name="lowTextSize">18sp</dimen>
     <dimen name="itemPadding">15dp</dimen>
     <dimen name="imageSize">80dp</dimen>
-    <dimen name="marginStart"></dimen>
+    <dimen name="marginStart">5dp</dimen>
     <dimen name="marginTop">4dp</dimen>
 </resources>

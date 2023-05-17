@@ -6,25 +6,24 @@
     android:layout_height="wrap_content"
     android:paddingBottom="@dimen/itemPadding">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/photoImageView"
         android:layout_width="@dimen/imageSize"
         android:layout_height="@dimen/imageSize"
-        android:layout_marginStart="@dimen/marginStart"
         android:layout_marginTop="@dimen/marginTop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_user_avatar" />
 
     <TextView
-        android:paddingTop="5dp"
         android:id="@+id/userNameTextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginStart"
         android:ellipsize="end"
         android:fontFamily="Times New Roman"
         android:lines="1"
+        android:padding="5dp"
         android:textSize="@dimen/highTextSize"
         app:layout_constraintStart_toEndOf="@id/photoImageView"
         app:layout_constraintTop_toTopOf="@id/photoImageView"
@@ -34,6 +33,7 @@
         android:id="@+id/userAboutTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart"
         android:layout_marginTop="@dimen/marginTop"
         android:ellipsize="end"
         android:lines="1"

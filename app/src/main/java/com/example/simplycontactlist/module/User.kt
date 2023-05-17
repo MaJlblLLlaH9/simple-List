@@ -4,9 +4,6 @@ import com.example.simplycontactlist.model.ResourceManager
 
 class User(private val name: String, private val about: String, private val photo: Int) {
 
-
-//    private fun getUserUi() = "$photo$name\n$about"
-
     fun getUserName(): String {
         return name
     }
@@ -19,22 +16,19 @@ class User(private val name: String, private val about: String, private val phot
         return photo
     }
 
-//    fun map(callback: DataCallback) = callback.run {
-//        provideData(getUserUi())
-//    }
 }
 
 interface UsersFailure {
-    fun getMessage(): MutableList<User>
+    fun getMessage(): String
 }
 
 class NoData(private val resourceManager: ResourceManager) : UsersFailure {
-    override fun getMessage(): MutableList<User> = UsersList().users
+    override fun getMessage(): String = "No data of users"
 }
 
 //
 class ServiceUnavailable(private val resourceManager: ResourceManager) : UsersFailure {
-    override fun getMessage(): MutableList<User> = UsersList().users
+    override fun getMessage(): String = "Service is unavailable"
 
 }
 
