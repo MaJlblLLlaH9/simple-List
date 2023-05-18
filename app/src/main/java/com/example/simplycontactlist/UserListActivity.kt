@@ -18,6 +18,7 @@ class UserListActivity : AppCompatActivity() {
         viewModel = (application as UserApp).viewModel
         val button = binding.buttonView
         val progressBar = binding.progressBar
+        val errorTextView = binding.errorTextView
         val recyclerView = binding.recyclerView
         recyclerView.visibility = View.INVISIBLE
 
@@ -25,19 +26,26 @@ class UserListActivity : AppCompatActivity() {
             button.visibility = View.INVISIBLE
             progressBar.visibility = View.VISIBLE
             viewModel.getUsers()
-
         }
 
-        viewModel.init(object : UserCallback {
+        viewModel.init(object : UsersCallback {
 
-            override fun provideUsers(adapter: UsersAdapter) = runOnUiThread {
+            override fun provideUsers(adapter: UsersAdapter/*Что передавать???*/) = runOnUiThread {
                 button.isEnabled = false
                 progressBar.visibility = View.INVISIBLE
                 binding.recyclerView.adapter = adapter
                 recyclerView.visibility = View.VISIBLE
             }
-
+//todo
+//            override fun provideFailure(error: String) {
+//                button.isEnabled = false
+//                progressBar.visibility = View.INVISIBLE
+//                errorTextView.visibility = View.VISIBLE
+//                errorTextView.text = error
+//            }
+//
         }
+
         )
 
 

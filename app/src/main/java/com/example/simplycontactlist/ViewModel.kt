@@ -5,17 +5,17 @@ import com.example.simplycontactlist.module.UsersFailure
 
 class ViewModel(private val model: Model) {
 
-    private var callback: UserCallback? = null
+    private var callback: UsersCallback? = null
 
-    fun init(callback: UserCallback) {
+    fun init(callback: UsersCallback) {
         this.callback = callback
         model.init(object : ResultCallback {
             override fun provideSuccess(adapter: UsersAdapter) =
                 callback.provideUsers(adapter)
 
             //todo
-//            override fun provideError(error: UsersFailure) =
-//                callback.provideUsers(error.getMessage())
+//            override fun provideError(/*Что передавать???*/error: UsersFailure) =
+//                callback.provideFailure(error.getMessage())
 
         })
     }
@@ -30,8 +30,9 @@ class ViewModel(private val model: Model) {
     }
 }
 
-interface UserCallback {
+interface UsersCallback {
     fun provideUsers(adapter: UsersAdapter)
+//todo    fun provideFailure(error: String)
 }
 
 interface Model {
@@ -45,5 +46,5 @@ interface Model {
 
 interface ResultCallback {
     fun provideSuccess(adapter: UsersAdapter)
-//    fun provideError(error: UsersFailure)
+   //todo  fun provideError(error: UsersFailure)
 }

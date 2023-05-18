@@ -5,7 +5,8 @@ import com.example.simplycontactlist.Model
 import com.example.simplycontactlist.ResultCallback
 import com.example.simplycontactlist.UsersAdapter
 import com.example.simplycontactlist.module.NoData
-import com.example.simplycontactlist.module.ServiceUnavailable
+import com.example.simplycontactlist.module.User
+import com.example.simplycontactlist.module.UsersList
 import com.example.simplycontactlist.module.UsersService
 
 class TestModel(resourceManager: ResourceManager) : Model {
@@ -18,8 +19,8 @@ class TestModel(resourceManager: ResourceManager) : Model {
     override fun getUsers() {
         Thread {
             Thread.sleep(1000)
+            //todo callback?.provideError(noData)
             callback?.provideSuccess(UsersAdapter(UsersService()))
-// todo           callback?.provideError(noData)
         }.start()
     }
 
@@ -33,10 +34,10 @@ class TestModel(resourceManager: ResourceManager) : Model {
 }
 
 interface ResourceManager {
-    fun getString(stringResId: Int): String
+    fun getMessage(stringResId: Int): String
 }
 
 class BaseResourceManager(private val context: Context) : ResourceManager {
-    override fun getString(stringResId: Int) = context.getString(stringResId)
+    override fun getMessage(stringResId: Int) = context.getString(stringResId)
 
 }
